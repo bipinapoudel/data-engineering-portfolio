@@ -5,14 +5,14 @@ Data Engineering Portfolio
 This repository contains a comprehensive collection of projects, exercises, and notes related to Data Engineering. It includes hands-on implementations using Python, SQL, and modern data engineering tools such as Databricks and Spark. The goal is to document my learning journey and build real-world data engineering skills.
 
 🛠️ Technologies Used
-Python
-SQL
-Pandas
-Apache Spark
-Databricks
-Data Warehousing Concepts
-ETL Pipelines
-Big Data Fundamentals
+-Python
+-SQL
+-Pandas
+-Apache Spark
+-Databricks
+-Data Warehousing Concepts
+-ETL Pipelines
+-Big Data Fundamentals
 
 📂 Repository Structure
 data-engineering-portfolio/
@@ -54,4 +54,5 @@ Improve SQL and Python skills for data engineering
 Learn scalable data pipeline design
 
 👩‍💻 Author
+
 Bipina Poudel

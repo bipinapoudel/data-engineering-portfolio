@@ -1,0 +1,110 @@
+Introduction to Hadoop Framework
+
+Hadoop 
+It is an open source framework which is used to handle/process the large amount of different datatypes collected from various sources suing MapReduce algorithm in a distributed and parallel way.
+It aids in processing the data efficiently and faster.
+It uses multiple computers together in a company instead of one.
+
+Distributed Environment
+Instead of storing all data in one computer, Hadoop breaks the data into smaller pieces called blocks, and distributes those pieces across many computers and processes them in parallel.
+
+Data warehouse is a highly structured repository for processed data used for business reporting, while Hadoop is an open source framework designed for distributed storage and processing of massive amounts of raw, diverse data across clusters of hardware.
+
+How does hadoop work?
+-1. Stores data 2. Processes data
+- first it splits data into blocks(each 125MB)
+-Then distributes those blocks across machines/clusters 
+-Process blocks in parallel using MapReduce algorithm
+-Combines results into final output 
+
+
+Hadoop Scalability - It uses horizontal scaling which is the process of increasing system capacity by adding more machines/servers to distribute the workload instead of making one machine more powerful.
+
+Used in systems like:
+Apache Hadoop
+Apache Spark
+We just add more nodes to process large data efficiently
+
+Big Data Framework- When dealing with extremely large datasets, traditional approach are not enough to solve the problem of 3V's
+1. Volume- the size of data
+2. Velocity- the speed at which the data is generating
+3. Variety- the data types of generating data like structured, semi-structured, unstructured
+
+Hadoop is cost effective because it uses commodity hardware.
+In Big Data Frameworks like Apache Hadoop are designed to run on commodity hardware:
+Data is distributed across machines so, it is not single system bottleneck as like traditional approach.
+System remains functional even if one node fails
+Easily scalable by adding more machines
+
+Hadoop Architecture
+It has 4 layers- 
+1. MapReduce- it is a data processing layer where map phase splits the data and reduce phase combines all the outcome generated from different clusters
+2. HDFS(Hadoop Distributed File System)- it is a storage layer which distributes files across different machines and ensures fault tolerance through replication of each block into 3 copies.
+3. YARN Framework(Yet Another Resource Allocator)- it is a layer for job scheduling, resource management
+4. Common Utilities- Java Libraries, includes utilities required by all Hadoop modules
+
+
+
+HADOOP VS DATA WAREHOUSE
+
+Hadoop
+Definition- Distributed framework for storing & processing big data
+Data Type- Structured, semi-structured, unstructured
+Schema- Schema-on-read (applied when reading)
+Storage- Uses distributed storage (HDFS)
+Processing- Batch processing (MapReduce, Spark)
+Cost- Low (uses commodity hardware)
+Scalability- Highly scalable (horizontal scaling)
+Use Case- Big data processing, data lakes
+Speed- Slower for queries (batch-oriented)
+
+
+Data Warehouse
+Definition- Centralized system for structured data analysis
+Data Type- Mostly structured data
+Schema- Schema-on-write (defined before storing)
+Storage- Uses relational databases (RDBMS)
+Processing- SQL-based querying and reporting
+Cost- High (expensive storage & licenses)
+Scalability- Limited (vertical scaling mostly)
+Use Case- Business intelligence, reporting
+Speed- Faster for structured queries
+
+
+🔹 Simple Explanation
+Hadoop → stores and processes huge raw data (any type)
+Data Warehouse → stores clean, structured data for reporting
+
+🔹 Real-World Example
+Hadoop → stores raw logs, clickstream data, IoT data
+Data Warehouse → stores processed data for dashboards (Power BI, Tableau)
+
+Python in Data Engineering
+
+Simplicity --> DE
+Python 1.x- initial
+now- major improvements, BP, cleaner syntax, improved security
+
+Why python as DE?
+large volume of data
+process your data quickly and efficiently
+powerful libraries- panda-data manipulation, numpy-numerical operation, and pyspark-big data processing
+automation and reduce manual effort
+integrates easily with big data tool
+
+
+Python merits
+it is very versatile(data analysis, web development, AI and automation)
+ 
+Libraries- are the pre written code modules that help us perform task faster without writing everything from the scratch
+Example- Pandas- data handling and analysis
+numpy- mathematical and numerical operation and data processing
+pyspark- processing large scale data
+matplotib- data visualization
+
+Big Data Framework- When dealing with extremely large datasets, traditional approach are not enough
+
+
+
+
+

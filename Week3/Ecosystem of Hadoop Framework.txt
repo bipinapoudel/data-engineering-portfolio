@@ -28,7 +28,7 @@ First, HDFS will split the file into 3 blocks as follow:
 Block1-> 128MB
 Block2-> 128MB
 Block3-> 44MB
-Each block will be stored on different machines
+Each block will get replicated on 3 datanodes to ensure fault tolerance.
 
 In HDFS, moving computation near data means executing processing tasks on the nodes where data resides, minimizing data transfer and improving performance.
 Hadoop move computation to where data exists means it sends processing program t the machine where data is stored.
@@ -46,6 +46,10 @@ Allows: Process huge datasets, run tasks in parallel, uses cluster of commodity 
 Map Function: processes input data-> converts into key value pair, thus it breaks large data into small pieces
 Reduce Function: Takes output from map function as an input and combines similar keys and produces a final result.
 Both Map and reduce function are written in Java.
+
+When a user upload a file of certain size, the following action occurs:
+Client-> YARN(Resource Management)-> HDFS Stage-> where File splited into blocks-> blocks stored in datanodes-> Map phase occurs->Shuffle and sorting phase->Reduce phase-> final output which again stored in HDFS
+
 
 
 

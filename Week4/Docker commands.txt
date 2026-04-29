@@ -1,0 +1,24 @@
+Docker commands 
+ 
+Containers commands 
+1- docker run -it image_name 
+2- Inside the image’s container commands you can run 
+Creating new directory- mkdir coders  
+List of files inside the container- la 
+Environment variables- env  
+Stopping the container- exit 
+3- Containers exists- docker ps -a 
+4- Running containers – docker ps  
+5- Docker rm container_name – to delete or destroy the container 
+6- Versions of images 
+Docker pull image:version 
+7- Docker run-d image_name 
+8- Renaming a container 
+Docker run - - name cont_name -d image name 
+Additional  
+Docker run -d -e MYSQL_ROOT_PASSWORD=secret - - name mysql-older 
+mysql:8.0  
+9- Port binding – docker run -p8080:3306 image_name 
+10- Trouble shoot commands  
+11-  Docker log cont_id  
+12- Docker exec -it cont_id /bin/bash or /bin/sh

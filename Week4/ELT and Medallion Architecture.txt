@@ -1,0 +1,63 @@
+ELT- Extract Load and Transform
+
+ETL in Databricks
+Load raw data, clean it, and prepare it for analytics(Bronze->Silver->Gold)
+Store data in Delta tables and transform it using SQL, Python, or Spark
+Usually follows ELT: Load first, transform inside Databricks
+
+ETL VS ELT
+ELT is generally preferred in modern data engineering because it leverages scalable storage and compute systems, allowing faster ingestion and flexible transformations, whereas ETL is more suitable for smaller or regulated workloads.
+
+
+Medallion Architecture
+The Medallion Architecture is a layered approach to ELT pipelines where data moves through three stages: Bronze → Silver → Gold
+Each layer improves data quality and usability.
+
+🔷 1. Bronze Layer (Load / Raw Data)
+Data is ingested from sources (APIs, databases, logs)
+Loaded directly into storage (data lake)
+Stored as-is (no transformation)
+Acts as a source of truth
+
+Example:
+Raw JSON from API
+CSV from external system
+👉 In ELT terms: Load
+
+🔷 2. Silver Layer (Transform / Clean Data)
+Data is cleaned and validated
+Remove duplicates, nulls
+Apply schema and standardization
+Join multiple sources
+
+👉 Transformations happen after loading
+👉 In ELT terms: Transform
+
+🔷 3. Gold Layer (Transform / Business Data)
+Aggregated, business-ready data
+Optimized for analytics and reporting
+Used for dashboards, reports, ML
+
+Examples:
+Daily sales summary
+Customer metrics
+👉 In ELT terms: Final Transform (analytics layer)
+
+ELT Flow
+Source  → Load (Bronze)
+        → Transform (Silver)
+        → Transform (Gold)
+        → BI / Analytics
+
+
+Data Lake
+A data lake is a storage layer where you keep raw and processed data.
+Examples:
+Amazon S3
+Azure Data Lake Storage
+Google Cloud Storage
+
+
+
+
+

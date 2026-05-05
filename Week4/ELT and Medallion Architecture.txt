@@ -13,7 +13,7 @@ Medallion Architecture
 The Medallion Architecture is a layered approach to ELT pipelines where data moves through three stages: Bronze → Silver → Gold
 Each layer improves data quality and usability.
 
-🔷 1. Bronze Layer (Load / Raw Data)
+🔷 1. Bronze Layer (Load / Raw Data)---Raw
 Data is ingested from sources (APIs, databases, logs)
 Loaded directly into storage (data lake)
 Stored as-is (no transformation)
@@ -24,7 +24,7 @@ Raw JSON from API
 CSV from external system
 👉 In ELT terms: Load
 
-🔷 2. Silver Layer (Transform / Clean Data)
+🔷 2. Silver Layer (Transform / Clean Data)--Staging
 Data is cleaned and validated
 Remove duplicates, nulls
 Apply schema and standardization
@@ -33,7 +33,7 @@ Join multiple sources
 👉 Transformations happen after loading
 👉 In ELT terms: Transform
 
-🔷 3. Gold Layer (Transform / Business Data)
+🔷 3. Gold Layer (Transform / Business Data)--Production
 Aggregated, business-ready data
 Optimized for analytics and reporting
 Used for dashboards, reports, ML
@@ -56,6 +56,10 @@ Examples:
 Amazon S3
 Azure Data Lake Storage
 Google Cloud Storage
+
+
+Data ingestion 
+It is the process of extracting data from amazon s3 bucket to databricks schema.
 
 
 

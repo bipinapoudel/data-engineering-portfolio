@@ -16,4 +16,17 @@ scp-copying from two different machine
 Copying file from data folder of ubuntu to local machine
 scp -i "EC2_KeyValuePair.pem" ubuntu@ec2-18-221-54-139.us-east-2.compute.amazonaws.com:~/data/abc.txt .
 
+1. EC2
+Stands for Elastic Compute Cloud.
+It is a service that lets you rent virtual servers (computers) in the cloud.
+
+EC2 is a cloud service where you can create and run virtual machines on AWS.
+
+2. S3
+Stands for Simple Storage Service.
+It’s a cloud service used to store and retrieve any amount of data from anywhere.
+
+S3 is a scalable cloud storage service where data is stored as objects inside buckets.
+
+
 

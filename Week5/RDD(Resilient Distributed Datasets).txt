@@ -1,0 +1,63 @@
+RDD(Resilient Distributed Datasets): A core building block of Pyspark
+Fault tolerant
+Immutable
+Distributed computation
+
+
+Partitioning ways:
+1. Partitioning the data during the creation of RDD
+2. Partition an existing RDD- Repartition() or Coalesec()
+
+Repartition- Reshuffle the data
+Adjusts the number of partitions, redistributing data across the specified number of partitions.
+Can be expensive, especially for large datasets, as it involves a full shuffle of data.
+Distributes data across partitions evenly, potentially leading to balanced partition sizes.
+Use Case: When changing the number of partitions or evenly distributing data across partitions.
+
+
+Coalesec()- Reduces the number of partitions without shuffling data, merging existing partitions. so, the sequence of data is same
+Less expensive than because it minimizes data movement.
+May result in imbalanced partition sizes, especially when reducing the number of partitions.
+Use Case: When decreasing the number of partitions without incurring the cost of a full shuffle.
+
+
+{Coalesec() in SQL- It returns null values}
+
+RDD supports two types of operations:
+1. RDD Transformation: Operations which creates new RDD by applying computation or manipulation on the data.
+Transformation is lazy operations.
+When executed in a single or multiple new RDD.
+Since RDD are immutable in nature, transformation always create a new RDD without updating an existing one hence, a chain of RDD transformation creates an RDD Image.
+E.G: map(), flatMap(), filter(), sortByKey()
+
+
+2. RDD Action: Operations that return result or perform an action on RDD. It don't make new RDD but it result in the output.
+Eagerly evaluated.
+Any functions on RDD that returns other than new RDD is considered as an action.
+Action functions trigger the transformation execute.
+E.G: count(), show(), collect(), first(), max(), reduce()
+
+Narrow VS Wide Transformation
+1. Narrow Transformation(one to one mapping from partitions of data.
+No cross movement of data happening in between partitions)
+Data Movement: Data is only moved within the same partition, and each partition contributes to only one output partition. It is executed in a single stage without exchanging nodes.
+E.G: map(), filter(), flatmap(), union(), sample()
+Shuffling: No shuffling required between partitions.
+Dependency Type: One-to-one dependency(each output partition depends on exactly one input partition)
+Performance: Faster and efficient due to local data processing.
+Utilization: Minimal overhead, fewer resources required.
+Fault Tolerance: Easier to recover from failures, as only the local partition needs to be recomputed.
+Use Case: Suitable for lightweight transformations with no need for repartitioning.
+
+2. Wide Transformation(One to many or many to one between partitions)
+Data Movement: Data is shuffled across multiple partitions, and each input partition can contribute to multiple output partitions. It often results in stage boundaries and require data exchange between nodes.
+E.G: groupBy(), reduceBy(), join(), distinct()
+Shuffling: Requires shuffling as data moves between partitions.
+Performance: Slower in performance because of shuffling.
+Utilization: Resource intensive due to shuffling and repartitions.
+Fault tolerance: Requires recomputing multiple partitions due to data shuffling.
+Use Case: Required for operations which need aggregation or reoperations.
+
+
+
+

@@ -26,7 +26,54 @@ EC2 is a cloud service where you can create and run virtual machines on AWS.
 Stands for Simple Storage Service.
 It’s a cloud service used to store and retrieve any amount of data from anywhere.
 
-S3 is a scalable cloud storage service where data is stored as objects inside buckets.
+S3 is a scalable cloud storage service where data is stored as objects inside buckets without managing servers.
+Act as a central storage layer
+In our class, we try to create s3 bucket, upload some files and try accessing s3 from EC2
+
+BOTO3-Python SDK for AWS (Amazon Web Services).
+It lets you interact with AWS services using Python code.
+
+With boto3, you can:
+Upload files to S3
+Launch EC2 instances
+Read/write DynamoDB data
+Work with Lambda, IAM, Glue, Redshift, etc.
+
+AWS CLI- tool that lets you interact with Amazon Web Services (AWS)
+directly from your terminal or command prompt.
+Manage cloud resources (EC2 instances, S3 buckets, databases, etc.)
+Automate tasks using scripts
+Deploy applications
+Configure infrastructure without using the web console
+
+3 popular ways to access AWS service
+1. AWS console
+2. AWS CLI
+3. BOTO3
+
+3. Glue
+Fully managed serverless ETL service which consists of a central metadata repository- Glue Data Catalog
+
+4. AWS Lambda- serverless compute service
+AWS Lambda is a serverless compute service that lets you run code without managing servers.
+
+You simply:
+
+Write your code
+Upload it to Lambda
+AWS automatically runs it when triggered
+
+Instead of:
+creating servers
+installing software
+managing scaling
+Lambda handles all of that automatically.
+
+
+
+
+
+
 
 
 

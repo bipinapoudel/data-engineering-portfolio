@@ -52,7 +52,8 @@ Configure infrastructure without using the web console
 3. BOTO3
 
 3. Glue
-Fully managed serverless ETL service which consists of a central metadata repository- Glue Data Catalog
+Fully managed serverless ETL service which consists of a central metadata repository- Glue Data Catalog-> Crawlers->ETL Job
+Manual schema 
 
 4. AWS Lambda- serverless compute service
 AWS Lambda is a serverless compute service that lets you run code without managing servers.

@@ -16,6 +16,9 @@ scp-copying from two different machine
 Copying file from data folder of ubuntu to local machine
 scp -i "EC2_KeyValuePair.pem" ubuntu@ec2-18-221-54-139.us-east-2.compute.amazonaws.com:~/data/abc.txt .
 
+IAM(Identity and Access Management)
+IAM in AWS is used to securely manage access to resources by defining users, roles, and permissions. It ensures that only authorized entities can access specific services based on least privilege principles.
+
 1. EC2
 Stands for Elastic Compute Cloud.
 It is a service that lets you rent virtual servers (computers) in the cloud.
@@ -54,6 +57,26 @@ Configure infrastructure without using the web console
 3. Glue
 Fully managed serverless ETL service which consists of a central metadata repository- Glue Data Catalog-> Crawlers->ETL Job
 Manual schema 
+
+AWS Key Features
+1. Data Discovery
+2. ETL
+3. Data Catalog
+
+Typical flow:
+
+Data source (S3, RDS, etc.)
+Crawler scans data → creates schema(infers schema automatically and creates table in data catalog)
+Data Catalog stores metadata
+Glue Job (Spark-based) transforms data(which uses Apache spark transform data)
+Output to S3 / Redshift / other systems
+Flexible scheduler which aids in orchestration 
+
+Actually glue starts running ETL job in Apache spark, where we don't have to manage or deploy spark servers .. Glue will do it itself we just have to write code and run them
+
+Metadata in AWS Data Catalog is the descriptive information about data, such as schema, location, and format, which helps services like Athena and Glue understand and process the data without storing the actual data itself.
+
+AWS Glue Connectors: connectors are used to connect Glue with different data sources and destinations. It act like bridges that allow you to read/write data from various systems.
 
 4. AWS Lambda- serverless compute service
 AWS Lambda is a serverless compute service that lets you run code without managing servers.

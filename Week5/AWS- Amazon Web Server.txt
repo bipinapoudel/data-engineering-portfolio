@@ -93,6 +93,29 @@ installing software
 managing scaling
 Lambda handles all of that automatically.
 
+AWS Redshift
+Architecture: Master Slave Architecture
+i.e. Leader Node and compute node-> it lets the data evenly distributed 
+
+i. Leader Node: handles- metadata, query planning and coordination
+ii. Compute Node: worker machines and have actual data processing
+
+Hashing decides which row should go to which compute node.
+
+Distribution Style
+All Distribution 
+Even Distribution 
+Key Distribution
+
+Sort Keys: a sort key determines the order in which data is physically stored on disk inside a table.
+
+It helps Redshift skip unnecessary data blocks while scanning, making queries much faster.
+
+distkey: a DISTKEY (Distribution Key) decides how data is distributed across compute nodes in a cluster.
+
+It directly impacts query performance, especially for joins and aggregations.
+DISTKEY helps minimize data movement.
+
 
 
 

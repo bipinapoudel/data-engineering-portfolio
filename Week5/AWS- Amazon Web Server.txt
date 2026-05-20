@@ -116,6 +116,31 @@ distkey: a DISTKEY (Distribution Key) decides how data is distributed across com
 It directly impacts query performance, especially for joins and aggregations.
 DISTKEY helps minimize data movement.
 
+AWS Athena
+AWS Athena is a serverless query service that lets you run SQL queries directly on data stored in Amazon S3 — without setting up servers or databases.
+Athena = SQL on top of S3 data
+
+S3 (your data files)
+   ↓
+Glue Data Catalog (metadata)
+   ↓
+Athena (run SQL queries)
+   ↓
+Results (in seconds)
+
+External Table
+An external table in AWS Athena is a table that does NOT store data inside Athena — it only points to data stored in S3.
+
+👉 In simple terms:
+External Table = Metadata (schema) + S3 data location
+📦 Key Idea
+Athena does not store your data
+Your data stays in Amazon S3
+The table just tells Athena:
+Where the data is
+What columns exist
+What format the data is in
+
 
 
 

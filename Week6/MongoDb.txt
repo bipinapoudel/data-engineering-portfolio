@@ -1,0 +1,48 @@
+MongoDb
+it's a journal oriented NOSQL DBs
+stores data in the form of documents instead of row and column
+schemaless which makes it highly flexible and suitable
+horizontal scalability:
+Add more machines/nodes
+Distributes load across systems
+Highly scalable and fault-tolerant
+
+NoSQL-
+Dynamic schema
+Cassandra, HBASE, DynamoDb 
+
+Relational vs non-relational dbs
+
+Relational db:
+Data stored in tables (rows & columns)
+Fixed schema (structured)
+Uses SQL
+Supports joins and strong relationships
+Ensures ACID properties (high consistency)
+
+👉 Examples: MySQL, PostgreSQL, Oracle Database
+
+👉 Use when:
+
+Data is structured (banking, transactions)
+You need accuracy & consistency
+
+Non-relational db: 
+Data stored as JSON, key-value, documents, or graphs
+Flexible schema (semi/unstructured)
+No strict table relationships
+Designed for scalability & performance
+
+👉 Examples: MongoDB, Cassandra, Redis
+
+👉 Use when:
+
+Data is large, fast-changing, or unstructured
+Need high scalability (big data, real-time apps)
+
+Columnar Storage: which increase data scanning speed
+compression is easier
+ORC-Optimized Row Columnar
+
+
+

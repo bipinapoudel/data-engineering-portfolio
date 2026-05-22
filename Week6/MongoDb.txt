@@ -44,5 +44,13 @@ Columnar Storage: which increase data scanning speed
 compression is easier
 ORC-Optimized Row Columnar
 
+db.mycol.find({
+"likes": {$gt:10}, ---where like >10
+
+ $or: [  
+{"by": "bootcamp"},
+{"title": "MongoDB Overview"}
+]}).pretty()
+
 
 

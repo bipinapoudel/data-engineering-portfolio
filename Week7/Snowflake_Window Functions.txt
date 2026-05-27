@@ -1,0 +1,34 @@
+Window Functions
+1. Aggregate window Functions
+2. Ranking Window Functions
+
+👉 Apache Spark is the distributed data processing engine, while PySpark is the Python API used to interact with Spark for large-scale data processing and analytics.
+
+👉 PySpark sits on top of Apache Spark as the Python API layer. Developers write code in Python using PySpark, while the underlying Apache Spark engine performs the distributed processing.
+
+👉 Sparksession is the main entry point for working with spark in pyspark. it like an object used to start and interact with spark. It helps to creates dataframes, run SQL queries, read and write files.
+
+Snowflake
+storage and compute
+
+Snowflake is a cloud-based data warehouse platform used for:
+
+storing large amounts of data
+running analytics queries
+business intelligence
+data engineering workloads
+
+Proper Architecture
+S3 / APIs / Kafka
+        ↓
+ETL Pipelines
+        ↓
+Snowflake
+        ↓
+Power BI / Tableau / Analytics
+
+👉 Snowflake provides high scalability, cloud-native architecture, separation of compute and storage, fast analytics performance, automatic scaling, strong concurrency handling, and support for structured and semi-structured data, making it ideal for modern data engineering and analytics workloads.
+
+
+
+

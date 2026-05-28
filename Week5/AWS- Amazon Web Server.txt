@@ -141,6 +141,14 @@ Where the data is
 What columns exist
 What format the data is in
 
+Athena vs Redshift
+athena-serverless query enginer, it doesn't store data, per query
+redshift-data warehouse, per cluster
+S3-data lake
+
+data source- mongodb, s3, api, kafka --> spark/glue ETL--> amazon redshift--> BI dashboards
+
+
 
 
 

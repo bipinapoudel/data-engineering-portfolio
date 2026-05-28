@@ -29,6 +29,35 @@ Power BI / Tableau / Analytics
 
 👉 Snowflake provides high scalability, cloud-native architecture, separation of compute and storage, fast analytics performance, automatic scaling, strong concurrency handling, and support for structured and semi-structured data, making it ideal for modern data engineering and analytics workloads.
 
+Snowflake Hierarchy
+
+Organization
+    ↓
+Account
+    ↓
+Database
+    ↓
+Schema
+    ↓
+Tables / Views / Stages / File Formats
+
+👉 Snowflake hierarchy consists of Organization → Account → Database → Schema → Tables/Views and other database objects, providing structured data organization and access management in the Snowflake platform.
+
+Internal vs external stages
+In Snowflake, a stage is a location used to store files before loading/unloading data.
+
+There are two types:
+
+✅ Internal Stage
+✅ External Stage
+🧠 Simple Difference
+Internal Stage	                External Stage
+Storage managed by Snowflake	Storage managed outside Snowflake
+Files stored inside Snowflake	Files stored in S3/Azure/GCS
+Easier setup	                More scalable/flexible
+Used for temporary/small loads	Used in enterprise pipelines
+
+
 
 
 

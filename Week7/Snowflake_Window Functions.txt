@@ -57,6 +57,7 @@ Files stored inside Snowflake	Files stored in S3/Azure/GCS
 Easier setup	                More scalable/flexible
 Used for temporary/small loads	Used in enterprise pipelines
 
+
 Amazon redshift vs Snowflake
 👉 Amazon Redshift is an AWS-native cloud data warehouse optimized for structured analytics workloads within the AWS ecosystem, while Snowflake is a fully managed multi-cloud data platform with independent compute-storage scaling, high concurrency, and strong support for semi-structured data and modern cloud-native analytics.
 

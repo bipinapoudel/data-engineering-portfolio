@@ -1,0 +1,99 @@
+MICROSOFT AZURE 
+Microsoft Azure for Data Engineering is a cloud platform that provides services like Azure Data Factory, Azure Data Lake, Azure Databricks, Synapse Analytics, Event Hub, and Power BI to build scalable ETL/ELT pipelines, process big data, support real-time streaming, and prepare data for analytics and reporting.
+
+Microsoft Azure for Data Engineering means using Azure cloud services to collect, store, process, transform, and analyze data from different sources.
+
+In simple words:
+
+Azure helps data engineers build data pipelines.
+
+A data pipeline means:
+
+Source data → Ingest data → Store data → Transform data → Analyze/report
+
+Example:
+
+A company has data in files, databases, APIs, or applications. As a Data Engineer, you use Azure tools to move that data, clean it, transform it, and make it ready for reporting or machine learning.
+
+Main Azure tools used in Data Engineering
+
+1. Azure Data Factory
+
+Used for data ingestion and pipeline orchestration.
+
+Example:
+Move data from SQL Server to Azure Data Lake every day.
+
+It is similar to a workflow tool where you schedule and manage ETL/ELT pipelines.
+
+2. Azure Data Lake Storage Gen2
+
+Used to store large amounts of raw and processed data.
+
+Example:
+
+Raw data → Bronze layer
+Cleaned data → Silver layer
+Business-ready data → Gold layer
+
+This is commonly used in Lakehouse / Medallion Architecture.
+
+3. Azure Databricks
+
+Used for big data processing using Apache Spark and PySpark.
+
+Example:
+Clean millions of customer records, join tables, remove duplicates, and save the final data as Delta tables.
+
+4. Synapse Analytics
+
+Used for data warehousing, analytics, and SQL-based reporting.
+
+Example:
+Business users run SQL queries on large datasets for reports and dashboards.
+
+5. Event Hub
+
+Used for real-time streaming data.
+
+Example:
+Collect live clickstream data, IoT data, or transaction events.
+
+Similar to Kafka.
+
+6. Power BI
+
+Used for dashboards and visualization.
+
+Example:
+Create sales dashboard, customer analytics dashboard, or fraud monitoring dashboard.
+
+Simple Azure Data Engineering Flow
+Data Sources
+(SQL Server, MongoDB, APIs, CSV files, Kafka/Event Hub)
+        ↓
+Azure Data Factory
+(Ingest and schedule pipeline)
+        ↓
+Azure Data Lake Storage
+(Store raw data)
+        ↓
+Azure Databricks
+(Clean, transform, PySpark processing)
+        ↓
+Delta Lake / Synapse
+(Store processed data)
+        ↓
+Power BI
+(Dashboard and reporting)
+Example project
+
+Suppose you are working with customer and order data.
+
+You may do this:
+
+1. Use Azure Data Factory to copy customer/orders data from database
+2. Store raw files in Azure Data Lake
+3. Use Azure Databricks with PySpark to clean and join the data
+4. Save final data as Delta tables
+5. Use Synapse or Power BI for reporting

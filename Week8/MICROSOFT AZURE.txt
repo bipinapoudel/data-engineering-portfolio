@@ -90,6 +90,7 @@ Example project
 
 Suppose you are working with customer and order data.
 
+
 You may do this:
 
 1. Use Azure Data Factory to copy customer/orders data from database

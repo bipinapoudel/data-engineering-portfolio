@@ -98,3 +98,31 @@ You may do this:
 3. Use Azure Databricks with PySpark to clean and join the data
 4. Save final data as Delta tables
 5. Use Synapse or Power BI for reporting
+
+SQL server enclosure and identifiers
+In SQL Server or Azure SQL, identifiers are the names of database objects such as tables, columns, schemas, views, and procedures. For example, in `SELECT CustomerName FROM Customers`, both `CustomerName` and `Customers` are identifiers. Enclosure means wrapping identifiers or values using special characters. Square brackets `[ ]` or double quotes `" "` are used to enclose identifiers, especially when names contain spaces, special characters, or reserved keywords. Single quotes `' '` are used for string values, not column or table names. In Azure Data Factory, enclosure or quote character is also used in CSV files to handle values that contain delimiters, such as commas inside a text value.
+
+
+A trigger is a mechanism that automatically starts or executes a pipeline, function, or workflow when a specific condition is met. Instead of running a process manually, triggers help automate tasks based on events, schedules, or time-based windows. In data engineering and cloud platforms, triggers are commonly used to start ETL pipelines, process incoming files, run jobs at fixed times, or handle data in batches.
+
+There are different types of triggers:
+
+**1. Event Trigger**
+An event trigger starts a process when a specific event happens. For example, when a new file is uploaded to AWS S3 or Azure Blob Storage, the trigger can automatically start a Lambda function, Azure Function, or data pipeline. This is useful for real-time or near real-time processing.
+
+**Example:**
+When a new CSV file arrives in cloud storage, an event trigger starts a pipeline to clean, transform, and load the data into a database.
+
+**2. Schedule Trigger**
+A schedule trigger runs a process at a fixed date and time or on a repeated schedule. It is useful when jobs need to run daily, weekly, monthly, or at a specific time.
+
+**Example:**
+A pipeline runs every day at 12:00 AM to refresh sales reports or load daily transaction data.
+
+**3. Tumbling Window Trigger**
+A tumbling window trigger runs a process in fixed, non-overlapping time intervals. Each window has a specific start and end time, and the next window starts only after the previous one ends. It is mainly used for time-based batch processing.
+
+**Example:**
+A pipeline processes data every 1 hour. The first window processes data from 1:00 PM to 2:00 PM, the next window processes data from 2:00 PM to 3:00 PM, and so on.
+
+In simple terms, an event trigger runs when something happens, a schedule trigger runs at a planned time, and a tumbling window trigger runs in fixed time blocks. These triggers are important because they reduce manual work, improve automation, and make data pipelines more reliable and efficient.

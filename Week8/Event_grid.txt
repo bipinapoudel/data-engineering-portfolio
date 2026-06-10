@@ -1,0 +1,68 @@
+# set sub 
+az account set --subscription "97f6332c-4edc-40c0-95a5-faded7db9546"
+# register provider
+az provider register --namespace Microsoft.EventGrid
+#verify
+az provider show -n Microsoft.EventGrid --query registrationState -o tsv
+
+Azure Event Grid is an Azure service used for event-driven automation.
+
+It detects when something happens in Azure and then triggers another service automatically.
+
+For example:
+
+A new file is uploaded to Azure Storage
+        ↓
+Azure Event Grid detects the event
+        ↓
+It triggers Azure Data Factory / Azure Function / Logic App
+        ↓
+Your pipeline starts automatically
+Simple meaning
+
+Azure Event Grid works like a notification system.
+
+It answers this question:
+
+“When something happens, what should run next?”
+
+Example in Data Engineering
+
+Suppose you have a data pipeline:
+
+Source system uploads CSV file to ADLS
+        ↓
+Event Grid detects new file
+        ↓
+ADF pipeline starts
+        ↓
+Data is cleaned and transformed
+        ↓
+Data is loaded into SQL / Synapse / Snowflake
+
+Without Event Grid, you may need to run the pipeline manually or on a fixed schedule.
+
+With Event Grid, the pipeline runs automatically when the file arrives.
+
+Common events Event Grid can detect
+Event	Example
+File created	New CSV uploaded to Storage
+File deleted	A file removed from container
+Resource created	New VM or storage account created
+Message/event published	Application sends custom event
+Common services Event Grid can trigger
+Triggered Service	Use
+Azure Data Factory	Start ETL pipeline
+Azure Function	Run Python/C# code
+Logic Apps	Send email/approval workflow
+Webhook	Send event to external application
+Data engineering interview answer
+
+You can say:
+
+Azure Event Grid is an event-routing service in Azure. It is used to build event-driven pipelines by detecting events such as file arrival in Azure Storage and triggering downstream services like Azure Data Factory, Azure Functions, or Logic Apps. In data engineering, it helps automate ETL workflows and reduces dependency on manual or schedule-based pipeline execution.
+
+Easy example
+New file arrives → Event Grid → ADF pipeline starts
+
+That is the easiest way to remember it.

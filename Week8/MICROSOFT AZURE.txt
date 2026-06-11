@@ -126,3 +126,7 @@ A tumbling window trigger runs a process in fixed, non-overlapping time interval
 A pipeline processes data every 1 hour. The first window processes data from 1:00 PM to 2:00 PM, the next window processes data from 2:00 PM to 3:00 PM, and so on.
 
 In simple terms, an event trigger runs when something happens, a schedule trigger runs at a planned time, and a tumbling window trigger runs in fixed time blocks. These triggers are important because they reduce manual work, improve automation, and make data pipelines more reliable and efficient.
+
+Azure Databricks
+Azure Databricks is a cloud-based data engineering and analytics platform built on Apache Spark. It is used to process large amounts of data, build ETL pipelines, run PySpark/SQL jobs, create machine learning workflows, and support lakehouse architecture.
+

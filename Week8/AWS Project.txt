@@ -1,0 +1,49 @@
+## Project: AWS Sales and Orders ETL Pipeline
+
+Currently, I am also working on an AWS-based Sales and Orders Data Engineering project. The main objective of this project is to build a scalable ETL pipeline that ingests customer and order data, processes it, applies business transformations, and stores the final output for analytics and reporting.
+
+In this project, I use Amazon S3 as the central data lake, AWS Glue for ETL processing, AWS Glue Data Catalog for metadata management, AWS Lambda for event-based automation, Amazon Athena for SQL querying, Amazon Redshift or Snowflake for analytical storage, and CloudWatch for monitoring.
+
+The data pipeline starts when raw CSV or JSON files are uploaded into an S3 bucket. AWS Lambda can trigger the pipeline automatically when a new file arrives. AWS Glue reads the raw data from S3, performs cleaning and transformation using PySpark, and writes the processed data back to S3 in Parquet format. The transformed data is then queried using Athena or loaded into Redshift or Snowflake for reporting.
+
+### What I Learned
+
+Through this project, I learned how AWS services work together in a real data engineering pipeline. I learned how S3 works as a data lake, how AWS Glue performs serverless ETL, how Glue Crawlers create metadata tables, and how Athena allows SQL queries directly on S3 data.
+
+I also learned the importance of converting raw CSV data into Parquet format because Parquet is more efficient for analytics. It reduces storage cost, improves query performance, and works better with big data processing.
+
+Another important learning was how to automate ETL workflows using AWS Lambda and monitor pipeline execution using CloudWatch logs.
+
+### Problems I Faced
+
+One problem I faced was schema mismatch in AWS Glue. Sometimes the source file had missing columns, extra columns, or different data types, which caused the Glue job to fail.
+
+Another issue was data quality. Some order records had null customer IDs, invalid order dates, negative order amounts, and duplicate order IDs.
+
+I also faced performance issues when querying large CSV files directly from S3 using Athena. The queries were slow and scanned too much data.
+
+### How I Overcame the Problems
+
+To solve schema mismatch issues, I added validation logic in the Glue PySpark job. I checked required columns before processing and separated bad records into an error folder instead of failing the entire pipeline.
+
+To improve data quality, I applied rules such as removing records with null customer IDs, filtering invalid order amounts, converting date fields into proper format, and removing duplicate records using PySpark transformations.
+
+To improve Athena performance, I converted CSV files into Parquet format and partitioned the output data by year, month, and region. This reduced the amount of data scanned during queries and improved query speed.
+
+I also used CloudWatch logs to troubleshoot errors and understand why a Glue job failed. This helped me debug issues more quickly and make the pipeline more reliable.
+
+### Business Impact
+
+This project helped create a clean, reliable, and query-optimized sales dataset for reporting. Business users could run faster SQL queries using Athena and generate reports on sales trends, customer orders, regional performance, and late shipments.
+
+The project also reduced manual work because the pipeline could be triggered automatically when new files arrived in S3.
+
+### Interview Explanation
+
+In my recent AWS project, I worked on a Sales and Orders ETL pipeline using Amazon S3, AWS Glue, Glue Data Catalog, Lambda, Athena, CloudWatch, and Redshift or Snowflake.
+
+The data flow starts with raw files landing in S3. AWS Lambda triggers the process, AWS Glue performs PySpark-based cleaning and transformation, the output is saved in Parquet format, and Athena or Redshift is used for analytics.
+
+One challenge I faced was schema mismatch and bad records in source files. I solved this by adding validation rules, separating bad records, and handling missing or incorrect data in PySpark. Another challenge was slow Athena queries on CSV data, which I improved by converting data into Parquet and partitioning it properly.
+
+This project helped me improve my AWS data engineering skills, especially in S3, Glue, PySpark, Lambda automation, Athena optimization, and CloudWatch monitoring.

@@ -1,3 +1,5 @@
+Bipina Poudel
+
 ## Project: AWS Sales and Orders ETL Pipeline
 
 Currently, I am also working on an AWS-based Sales and Orders Data Engineering project. The main objective of this project is to build a scalable ETL pipeline that ingests customer and order data, processes it, applies business transformations, and stores the final output for analytics and reporting.

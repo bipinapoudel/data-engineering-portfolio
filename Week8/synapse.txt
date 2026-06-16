@@ -1,0 +1,129 @@
+In Azure Synapse, a pool means a compute engine/resource used to process data.
+
+Simple meaning:
+
+Pool = processing power in Synapse
+
+You use pools to run:
+
+SQL queries
+Spark notebooks
+ETL transformations
+data warehouse workloads
+big data processing
+Main types of pools in Azure Synapse
+1. Serverless SQL Pool
+
+This is available by default in Synapse.
+
+You use it to run SQL queries directly on files stored in Data Lake or Blob Storage.
+
+Example:
+
+SELECT *
+FROM OPENROWSET(
+    BULK 'https://storageaccount.dfs.core.windows.net/raw/sales/*.parquet',
+    FORMAT = 'PARQUET'
+) AS rows;
+
+You do not need to create a database server or manage compute.
+
+Best for:
+
+Ad-hoc SQL queries
+Querying files in ADLS/S3-like storage
+Exploring raw data
+External tables
+Pay-per-query usage
+
+Simple meaning:
+
+Serverless SQL Pool = query files using SQL without managing servers.
+
+2. Dedicated SQL Pool
+
+This is the data warehouse compute in Synapse.
+
+You create tables inside it and load data into those tables.
+
+Example:
+
+CREATE TABLE dbo.Sales
+(
+    SalesID INT,
+    CustomerID INT,
+    Amount DECIMAL(10,2)
+);
+
+Best for:
+
+Enterprise data warehouse
+Large reporting workloads
+Power BI dashboards
+Fact and dimension tables
+High-performance SQL analytics
+
+This is where your earlier code fits:
+
+CREATE TABLE dbo.Date ...
+WITH
+(
+   DISTRIBUTION = ROUND_ROBIN,
+   CLUSTERED COLUMNSTORE INDEX
+);
+
+That code is for Dedicated SQL Pool, not serverless SQL pool.
+
+Simple meaning:
+
+Dedicated SQL Pool = managed data warehouse where data is stored in Synapse tables.
+
+3. Apache Spark Pool
+
+This is used for big data processing with Spark.
+
+You use it for:
+
+PySpark
+Spark SQL
+Scala
+notebooks
+machine learning
+large file transformations
+Delta Lake processing
+
+Microsoft describes Spark pools as compute definitions for Spark workloads; creating the pool itself does not consume resources until Spark instances/jobs run.
+
+Best for:
+
+ETL transformations
+Data cleaning
+Large-scale file processing
+Machine learning
+Delta/Parquet processing
+Notebook development
+
+Simple meaning:
+
+Spark Pool = cluster compute for PySpark/Spark notebooks and big data processing.
+
+Easy comparison
+Pool Type	Used For	Data Stored Where?	Example Use
+Serverless SQL Pool	SQL on files	ADLS/Blob Storage	Query CSV/Parquet directly
+Dedicated SQL Pool	Data warehouse	Synapse tables	Fact/dimension reporting tables
+Spark Pool	Big data processing	Usually ADLS/Delta/Parquet	PySpark ETL transformations
+Simple example in data engineering
+Raw files land in ADLS
+        ↓
+Spark Pool cleans/transforms data using PySpark
+        ↓
+Processed data saved as Parquet/Delta
+        ↓
+Serverless SQL Pool queries files directly
+        ↓
+or Dedicated SQL Pool stores curated warehouse tables
+        ↓
+Power BI/reporting
+Interview answer
+
+“In Azure Synapse, a pool is a compute resource used to process data. There are mainly three types: Serverless SQL Pool, Dedicated SQL Pool, and Apache Spark Pool. Serverless SQL Pool is used to query files directly from data lake using SQL, Dedicated SQL Pool is used for data warehouse workloads with stored tables, and Spark Pool is used for big data processing with PySpark, Spark SQL, notebooks, and machine learning.”

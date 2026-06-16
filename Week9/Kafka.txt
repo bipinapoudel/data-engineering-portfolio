@@ -1,0 +1,22 @@
+Kafka- Real time event streaming platform
+Acts like a central pipeline
+
+App--> Kafka--> Consumers
+
+i. Distributed --means data is distributed across different machines 
+ii. Supports horizontal scaling-- means if traffic gets increased then we can increase or add the machines or nodes or broker
+iii. Fault tolerance-- means if one broker is lost then data will remain in other cause it maintain replicas
+iv. Kafka Cluster
+
+Kafka and streaming--Data is generated and processed immediately e.g. payment
+
+Kafka Architecture
+1. producer- one who sends the data to kafka
+2. Topic- logical channel(like category)
+3. Consumer- one who reads the data from kafka
+
+Messaging models
+1. Publish subscribe-pub-sub
+2. Point-to-point
+
+

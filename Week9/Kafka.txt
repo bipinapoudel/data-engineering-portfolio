@@ -17,6 +17,58 @@ Kafka Architecture
 
 Messaging models
 1. Publish subscribe-pub-sub
-2. Point-to-point
+e.g. order placed with id 1 and it has multiple consumers
+2. Point-to-point- here only one consumer reads the message
+
+if the messaging model is pub-sub, we can't improve performance of kafka by increasing consumers instead we have to do partition with parallel processing
+
+Producer side
+Topic- payments
+partition-3
+Messages:
+M1---> P0
+M2---> P1
+M3---> P3
+
+consumers side
+c1 will read P0
+c2-p1
+c3-p2
+
+One partition will have only one consumer, or only one message for 1 consumer.
+
+How can we increase throughput?
+Add more consumers
+add more partitions
+
+what will happen if we have more partitions and less consumers?
+If Kafka has more partitions than consumers in a consumer group, Kafka assigns multiple partitions to each consumer. All partitions will still be consumed, but processing parallelism is limited by the number of active consumers. This setup is acceptable and allows us to scale later by adding more consumers.
+
+It is better than having fewer partitions than consumers
+More partitions than consumers is common and useful because later you can add more consumers to increase parallelism.
+
+Simple comparison
+Scenario	Result
+More partitions, fewer consumers	Consumers handle multiple partitions
+Same partitions and consumers	        Usually balanced processing
+Fewer partitions, more consumers	Extra consumers stay idle
+
+Partition distribution strategy
+1. Round dropping partition-kafka decides-default one
+2. Explicit partition- producer itself decides the partition
+3. Key-based partition-kafka decides
+hashkey % no of partitions
+
+docker with pycharm container
+
+
+
+
+
+
+
+
+
+
 
 

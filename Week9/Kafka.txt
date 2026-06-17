@@ -21,6 +21,7 @@ e.g. order placed with id 1 and it has multiple consumers
 2. Point-to-point- here only one consumer reads the message
 
 if the messaging model is pub-sub, we can't improve performance of kafka by increasing consumers instead we have to do partition with parallel processing
+throughput is the limitation
 
 Producer side
 Topic- payments
@@ -56,10 +57,10 @@ Fewer partitions, more consumers	Extra consumers stay idle
 Partition distribution strategy
 1. Round dropping partition-kafka decides-default one
 2. Explicit partition- producer itself decides the partition
-3. Key-based partition-kafka decides
+3. Key-based partition-kafka decides--make sure messages with the same key always go to the same partition.
 hashkey % no of partitions
 
-docker with pycharm container
+If consumers are less than partitions in Kafka, then one consumer will read from multiple partitions.
 
 
 

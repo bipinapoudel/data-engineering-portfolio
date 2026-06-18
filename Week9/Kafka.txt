@@ -62,6 +62,16 @@ hashkey % no of partitions
 
 If consumers are less than partitions in Kafka, then one consumer will read from multiple partitions.
 
+Rebalancing in Kafka
+Kafka rebalancing is the process of redistributing partitions among consumers in a consumer group when a consumer joins, leaves, fails, or when partitions are added. It ensures partitions are evenly assigned, but during rebalancing there can be a short pause in message consumption.
+
+Message flow in Kafka
+In Kafka, the producer sends messages to a topic. The topic is divided into partitions. If a key is provided, Kafka uses key-based partitioning to send related messages to the same partition; otherwise, it distributes messages across partitions. Each message gets an offset inside the partition. Kafka brokers store the partitions, and consumers in a consumer group read messages from assigned partitions while tracking offsets.
+
+Rebalancing means Kafka reassigns partitions among consumers when the consumer group changes.
+
+Message flow means producer sends data to a topic, Kafka stores it in partitions with offsets, brokers manage the partitions, and consumers read messages from assigned partitions.
+
 
 
 

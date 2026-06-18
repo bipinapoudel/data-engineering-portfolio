@@ -1,0 +1,19 @@
+DBT
+Data Build Tool--a transformation framework that enables analytic to store raw data inside warehouse using SQL
+
+Advance SQL
+Source data--> data warehouse--> dbtSQL models --> create analytics data
+
+Focuses on T part in ELT pipeline
+source(erp,crs)-> Airbyte-> snowflake->dbt-> staging layer or data test
+
+Core components of DBT
+core
+1. Model(SQL)
+2. Sources(YAML File)
+3. Test
+4. Snapshot--to track historical changes
+5. Seeds 
+6. Documentation
+
+GIT repo--> dbt--

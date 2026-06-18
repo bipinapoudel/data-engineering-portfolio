@@ -1,0 +1,2 @@
+Cache vs Persist
+Both cache and persist are used to store intermediate Spark DataFrames or RDDs to avoid recomputation when the same data is reused multiple times. Cache is a simpler method that uses the default storage level, while persist gives more control by allowing us to choose storage levels such as memory only, memory and disk, or disk only. I use cache for smaller or commonly reused DataFrames, and persist with MEMORY_AND_DISK when the dataset is large and may not fit completely in memory. After use, I call unpersist to release cluster resources.

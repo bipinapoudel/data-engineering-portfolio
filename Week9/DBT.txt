@@ -16,4 +16,7 @@ core
 5. Seeds 
 6. Documentation
 
-GIT repo--> dbt--
+GIT repo--> dbt
+
+Integration of snowflake with DBT 
+dbt integrates with Snowflake by using the Snowflake adapter and connection profile to run SQL-based transformations, tests, documentation, and lineage directly inside Snowflake.

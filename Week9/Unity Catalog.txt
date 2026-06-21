@@ -1,0 +1,68 @@
+Unity Catalog is the central governance and security layer in Databricks.
+
+In simple words, it helps companies manage who can access which data, track where the data came from, and control data across different Databricks workspaces.
+
+Databricks defines Unity Catalog as a unified governance layer that provides centralized access control, lineage, auditing, and data discovery across workspaces.
+
+Easy explanation
+
+Before Unity Catalog, each Databricks workspace could manage tables, permissions, and metadata separately. That made governance difficult.
+
+With Unity Catalog, you can manage everything centrally:
+
+Metastore
+   └── Catalog
+        └── Schema / Database
+             └── Tables / Views / Volumes / Functions
+
+Example:
+
+SELECT * 
+FROM main.sales.customer_orders;
+
+Here:
+
+main     = catalog
+sales    = schema
+customer_orders = table
+Why Unity Catalog is used
+
+Unity Catalog is used for:
+
+Access control
+You can give permissions like SELECT, CREATE, or MODIFY to users, groups, or service principals.
+
+Data lineage
+It tracks how data moves from source to target, for example from Bronze to Silver to Gold tables.
+
+Auditing
+It helps monitor who accessed data, when they accessed it, and what changes were made.
+
+Data discovery
+Users can search and understand available tables, columns, owners, and descriptions.
+
+Governance for sensitive data
+It helps protect PII, financial data, healthcare data, and other confidential information.
+
+Interview answer
+
+You can say:
+
+Unity Catalog is Databricks’ centralized governance layer for managing data access, metadata, lineage, auditing, and discovery across workspaces. In my project, it can be used to control access to Bronze, Silver, and Gold tables, manage permissions for different teams, track data lineage, and ensure secure handling of sensitive data such as PII. It helps improve data governance, compliance, and trust in the Lakehouse platform.
+
+Example in your project
+
+In a Medallion Architecture project:
+
+Bronze: raw candidate/job/application data
+Silver: cleaned and standardized data
+Gold: business-ready reporting tables
+
+Unity Catalog helps control access like this:
+
+Data Engineers → full access to Bronze, Silver, Gold
+Analysts → access only to Gold tables
+HR/Business users → access only to approved dashboards or views
+ML team → access to feature-engineered datasets
+
+So, Unity Catalog makes the Databricks Lakehouse more secure, governed, and organized.

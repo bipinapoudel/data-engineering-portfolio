@@ -1,0 +1,101 @@
+
+I am a data engineer based in Toronto with over 7 years of experience in designing and delivering 
+cloud native data solutions across workforce analytics, telecom and healthcare domains. My expertise includes maintaining and 
+building ETL/ELT pipelines, developing modern Lakehouse architectures, implementing batch and real-time data processing, ensuring
+data quality and governance, and optimizing Spark workloads for high-performance analytics. I have strong hands-on experience with Python, 
+SQL, PySpark, Apache Spark, Kafka, Databricks, Snowflake, Airflow, dbt, and multi-cloud platforms including AWS and Azure.
+I have also worked with CI/CD tools and cloud platforms to make data pipelines more reliable and production-ready.
+I am passionate about transforming complex data into reliable, high-quality datasets that support business insights and decision-making.
+Right now I am serving as a senior data engineer at skills and I am working on a Workforce Analytics Lakehouse project where the goal 
+is to build scalable batch and streaming data pipelines for candidate, job, recruiter, and application activity data using Medallion Architecture.
+
+At Skill Squirrel, I worked on a Workforce Analytics Lakehouse Platform where we processed candidate, recruiter, job, and application data at scale. 
+I built ETL/ELT pipelines using Azure Databricks, PySpark, Azure Data Factory, AWS Glue, ADLS Gen2, S3, Delta Lake, Snowflake, and dbt. We followed Medallion Architecture and created Bronze, Silver, and Gold layers for raw, cleaned, and business-ready data. I also worked on Kafka and Spark Structured Streaming pipelines for real-time candidate activity events, Airflow DAGs and Delta Live Tables for orchestration, and Spark optimization techniques like partitioning, caching, AQE, and broadcast joins. The final data supported workforce analytics dashboards, internal reporting, and ML-based predictive hiring models.
+
+Reason for switching the job
+
+I have had a valuable experience at Skill Squirrel, where I got the opportunity to work on data engineering projects involving 
+ETL/ELT pipelines, Azure Databricks, PySpark, Azure Data Factory, AWS Glue, Kafka, Delta Lake, and cloud-based Lakehouse architecture.
+The reason I am exploring a new opportunity is not because of any negative reason. I am looking for a role where I can continue growing
+as a Data Engineer, work on larger-scale data platforms, contribute to more complex pipeline development, and gain deeper exposure to 
+enterprise-level data architecture, cloud technologies, and real-time data processing.
+
+I want to see myself growing into a stronger and more independent Senior Data Engineer, taking ownership of end-to-end data pipelines 
+and cloud data platforms. I want to deepen my expertise in every technologies use in data engineering. I also want to contribute more to 
+production-level solutions, performance optimization, data quality, and automation. My goal is to become someone the team can rely
+on for solving complex data engineering problems and supporting business decisions through reliable data platforms.
+So, I want to keep learning new technologies and gradually move toward a lead data engineer in the data architect path.
+
+ZoomInfo
+I am interested in ZoomInfo because it is a data-first company, and data engineering plays a direct role in the product and business value. ZoomInfo works with large-scale business data, real-time insights, data quality, and go-to-market intelligence, which strongly matches my experience in building scalable pipelines using Databricks, PySpark, Snowflake, Kafka, Airflow, dbt, AWS, and Azure. I see this as a great opportunity to contribute my data engineering background while continuing to grow in a company where data is central to the platform.
+
+Pipeline Fails
+Priority is to access the impact and restore the pipeline as quickly and safely as possible. I would not panic or make random changes instead I 
+will follow the incident process step by step. 
+First I will check the alert details in the monitoring tools like cloudwatch, Airflow, Grafana or pipeline logs to detect which job get
+failed, when it failed and what the error message says. 
+secondly I would identify the type of error. Fort e.g. it could be a source file missing, memory issue, permission issue, 
+data quality failure, API timeout, etc.
+Third, I would check whether the failure is impacting business reporting SLA dashboards or downstream teams. If the situation is critical, 
+I will notify the responsible stakeholders or on-call team with a clear update.
+Fourth I would try safe recovery steps, such as rerunning the failed task, restarting the job from the failed step, checking job bookmarks,
+validating input data or increasing resources if it is a memory issue.
+If the issue is related to bad records or schema mismatch, I will isolate the bad records or move them in a quarantine path if available, then start processing records.
+Finally when the pipeline gets restored, I would document the root cause, what actions was taken and how to prevent it in the future.
+My goal is to restore service quickly protect data accuracy and make sure the same issue doesn't happen again.
+
+SQuirrel 
+Currently, at Skill Squirrel, I am working on a Workforce Analytics Lakehouse project where the goal is to build scalable batch and streaming data pipelines for candidate, job, recruiter, and application activity data.
+
+The project uses Azure Data Factory for ingestion and orchestration, Azure Data Lake Storage Gen2 for data storage, Azure Databricks and PySpark for transformation, Delta Lake for reliable data management, Kafka and Spark Structured Streaming for real-time candidate activity events, and Snowflake or Power BI for reporting and analytics.
+
+The pipeline follows Medallion Architecture. In the Bronze layer, we store raw data from different sources. In the Silver layer, we clean the data, remove duplicates, handle null values, standardize formats, and validate the data. In the Gold layer, we create business-ready tables for workforce analytics, such as candidate activity trends, recruiter performance, job application status, time-to-hire, and hiring funnel metrics.
+
+One major challenge I faced was duplicate and inconsistent candidate data coming from multiple systems. For example, the same candidate could appear with different email formats, missing fields, or different application statuses. I handled this using PySpark cleaning logic, standardization, and window functions to keep the latest valid candidate record.
+
+Another challenge was slow Spark job performance while joining large candidate, job, and application datasets. I improved the performance by using proper partitioning, broadcast joins for smaller lookup tables, caching only when needed, and adaptive query execution.
+
+I also worked on data quality checks to identify null values, duplicate records, invalid dates, and incorrect status values before moving the data to the Gold layer. This helped improve the reliability of reporting and reduced manual validation work.
+
+This project helped me strengthen my hands-on skills in Azure Databricks, PySpark, Delta Lake, Kafka streaming, Medallion Architecture, Spark optimization, and building production-ready data pipelines for analytics.
+
+Mobile
+In my recent AWS project, I worked on a Sales and Orders ETL pipeline using Amazon S3, AWS Glue, Glue Data Catalog, Lambda, Athena, CloudWatch, and Redshift or Snowflake.
+
+The data flow starts with raw files landing in S3. AWS Lambda triggers the process, AWS Glue performs PySpark-based cleaning and transformation, the output is saved in Parquet format, and Athena or Redshift is used for analytics.
+
+One challenge I faced was schema mismatch and bad records in source files. I solved this by adding validation rules, separating bad records, and handling missing or incorrect data in PySpark. Another challenge was slow Athena queries on CSV data, which I improved by converting data into Parquet and partitioning it properly.
+
+This project helped me improve my AWS data engineering skills, especially in S3, Glue, PySpark, Lambda automation, Athena optimization, and CloudWatch monitoring.
+
+I use AI as a productivity and support tool, not as a replacement for human judgment. In data engineering,
+AI can help me write initial code, debug errors, explain documentation, create test cases, optimize SQL or PySpark logic,
+and speed up repetitive tasks. For example, if I get a Spark error or need to write a complex transformation, I can use AI to understand 
+the issue faster and compare possible solutions.
+if it is used wisely then is helpful in increasing the productivity but they still require a developer who understands the problem,
+system architecture and business requirements.
+
+why cybersecurity?
+I completed my post-graduation in Cybersecurity and Threat Management because cybersecurity has become one of the most important demands of today’s technology industry. Every day, organizations are facing data breaches, ransomware attacks, phishing, insider threats, cloud security issues, and privacy risks. Since my background is in data engineering, I wanted to understand not only how to build data pipelines and analytics platforms, but also how to protect the data that moves through those systems.
+During my cybersecurity program, I learned about threat management, risk assessment, vulnerability management, incident response, network security, access control, data privacy, governance, and secure handling of sensitive information. These topics helped me understand how security teams think, how risks are identified, and why data integrity and confidentiality are important in enterprise systems.
+So, cybersecurity did not move me away from data engineering. It helped me become a more security-aware data engineer who can build reliable, auditable, and secure data platforms, especially in environments like cyber analytics, risk reporting, and governance.
+This knowledge has made me a stronger data engineer because now I design pipelines with a security mindset. For example, I pay more attention to IAM roles, least-privilege access, encryption, logging, monitoring, data validation, audit trails, and compliance requirements. So, cybersecurity did not take me away from data engineering; it helped me become more complete as a data engineer
+
+why project management
+I pursued Project Management because data engineering work involves more than writing pipelines. It requires understanding requirements, managing priorities, coordinating with teams, handling risks, and delivering projects on time. It helped me improve my Agile mindset, communication, planning, and stakeholder management skills, which are very useful when working on production data pipelines and enterprise data projects.
+
+Where do you see yourself in 5 years?
+Five years from now i see myself as a significant contributor to this company and ensuring that i am going to handle the leadership position based on my performance. However given the fact that AI have made every industry extremely unpredictable I consider myself as an extremely adaptable employee who can adapt to new software, new marketplaces and new business models because the fact is what is working today may or may not work tomorrow so i can pivot as per the market demands.
+
+
+Five years from now, I see myself as a strong contributor to this company, taking on more ownership and gradually moving toward a leadership role based on my experience and performance.
+With AI and technology changing industries very quickly, I believe adaptability is very important. I consider myself someone who can quickly learn new tools, adjust to new business needs, and continue improving with market changes. What works today may not always work tomorrow, so I want to stay flexible, keep learning, and contribute wherever the company needs me most.
+
+
+
+
+
+
+
+
+

@@ -3,13 +3,99 @@ caching and persisting are the performance optimization techniques used to avoid
 
 Both cache and persist are used to store intermediate Spark DataFrames or RDDs to avoid recomputation when the same data is reused multiple times. Cache is a less flexible and simpler method that uses the default storage level, while persist gives more control by allowing us to choose storage levels such as memory only, memory and disk, or disk only. I use cache for smaller or commonly reused DataFrames, and persist with MEMORY_AND_DISK when the dataset is large and may not fit completely in memory. After use, I call unpersist to release cluster resources.
 
-SCD Type 1 vs SCD Type 2
+Repartition vs coalesce
+Repartition- Reshuffle the data
+Adjusts the number of partitions, redistributing data across the specified number of partitions.
+Can be expensive, especially for large datasets, as it involves a full shuffle of data.
+Distributes data across partitions evenly, potentially leading to balanced partition sizes.
+Use Case: When changing the number of partitions or evenly distributing data across partitions.
+
+
+Coalesec()- Reduces the number of partitions without shuffling data, merging existing partitions. so, the sequence of data is same
+Less expensive than because it minimizes data movement.
+May result in imbalanced partition sizes, especially when reducing the number of partitions.
+Use Case: When decreasing the number of partitions without incurring the cost of a full shuffle.
+
+Group By vs Partition By
+GROUP BY is used to aggregate data and return one row per group. PARTITION BY is used with window functions to perform calculations within a group while keeping the original row-level details. For example, GROUP BY can give total sales per customer, while PARTITION BY can show each order along with that customer’s total sales.
+
 
 DataFrames, Datasets, or RDDs
+RDD is the low-level API and gives more control, but it does not have automatic optimization. DataFrame is a higher-level API with rows and columns, similar to a table, and Spark can optimize it using Catalyst Optimizer. Dataset is available mainly in Scala and Java and provides type safety along with optimization. In PySpark data engineering projects, DataFrames are used most commonly because they are easier, faster, and optimized.
 
+
+Data Warehousing
+Types of tables in a data warehouse
+1. Fact table: number/events/transactions
+2. Dimension table: descriptions/context
+A fact table stores measurable business events or transactions, such as sales amount, quantity, profit, claim amount, or order count. A dimension table stores descriptive information that gives context to the fact table, such as customer, product, date, location, or employee details. Fact tables usually contain foreign keys to dimension tables and numerical measures, while dimension tables contain descriptive attributes used for filtering, grouping, and reporting.
+
+SCD: Slowly Changing Dimensions
+SCD Type 1: Overwrites old data.
+Example: 
+Old city: Toronto
+New city: Vancouver
+
+Final record:
+Customer 101 | Vancouver
+
+No history of Toronto is kept.
+
+
+SCD Type 2: Insert a new row and Keeps full history.
+Example: 
+Customer 101 | Toronto   | 2024-01-01 | 2026-07-07 | N
+Customer 101 | Vancouver | 2026-07-08 | NULL       | Y
+
+SCD Type3: Add new column for previous value and Keeps limited history only.
+Example: 
+customer_id | current_city | previous_city
+101         | Vancouver    | Toronto
+
+3 Main data warehouse design models
 Schemas in data warehousing
+1. Star Schema: This the most common model where one fact table is in the centre and multiple dimension tables around it.
+dim_customer
+     |
+fact_sales — dim_product
+     |
+dim_date
+It is best for:
+Fast reporting
+Simple queries
+Dashboards
+BI tools like Power BI/Tableau
+
+
+2. Snowflake schema
+This is similar to star schema, but dimension tables are further split into smaller tables.
+Example:
+fact_sales → dim_product → dim_category → dim_subcategory
+It is best for:
+Reducing duplicate data
+More normalized design
+Better data organization
+
+But it needs more joins, so queries can be more complex.
+
+3. Galaxy Schema
+This has multiple fact tables sharing common dimension tables.
+Example:
+fact_sales
+fact_returns
+fact_inventory
+
+Shared dimensions:
+dim_date
+dim_product
+dim_store
+
+Best for:
+Large enterprise data warehouses
+Multiple business processes
+Complex analytics
   
-Repartition vs coalsec
+
 
 
 

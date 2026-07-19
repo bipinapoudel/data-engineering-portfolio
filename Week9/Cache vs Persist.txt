@@ -94,6 +94,10 @@ Best for:
 Large enterprise data warehouses
 Multiple business processes
 Complex analytics
+
+PowerBI
+As a Data Engineer, would you prefer transformation in Power Query or in ETL pipeline?
+For small transformations, Power Query is fine. But for enterprise-level data engineering, I prefer doing major transformations in ETL/ELT pipelines using tools like Databricks, PySpark, dbt, SQL, ADF, or Snowflake. This keeps the logic centralized, reusable, scalable, and easier to monitor.
   
 
 
